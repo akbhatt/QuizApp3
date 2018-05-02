@@ -8,4 +8,10 @@
     <string name="george_washington">George Washington</string>
     <string name="john_adams">John Adams</string>
     <string name="benjamin_franklin">Benjamin Franklin</string>
+    <string name="question_two">Question Two: Which of these are the founding fathers of the United States?</string>
+    <string name="james_madison">James Madison</string>
+    <string name="abraham_lincoln">Abraham Lincoln</string>
+    <string name="alexander_mackenzie">Alexander Mackenzie</string>
+    <string name="question_three">Question Three: How many stars are there in the flag of the USA?</string>
+    <string name="question_four">Question Four: Which country is on the north of United States?</string>
 </resources>

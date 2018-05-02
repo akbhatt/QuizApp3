@@ -4,7 +4,8 @@
     android:id="@+id/mainScrollView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#E0F7FA">
+    android:background="#E0F7FA"
+    android:keepScreenOn="true">
 
     <RelativeLayout
         android:id="@+id/mainRelativeLayout"
@@ -19,6 +20,7 @@
             android:layout_height="wrap_content"
             android:text="@string/welcome_text"
             android:textAlignment="center"
+            android:textColor="#FF5722"
             android:textSize="30sp" />
 
         <View
@@ -35,8 +37,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/welcomeTextView"
             android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
             android:text="@string/name_question_text"
             android:textAlignment="center"
+            android:textColor="#FF3D00"
             android:textSize="20sp" />
 
         <EditText
@@ -44,8 +49,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/nameTextView"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
             android:background="@drawable/rectangle_one"
             android:hint="@string/magna_sigi"
             android:inputType="textPersonName"
@@ -67,7 +72,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/nameEditText"
-            android:layout_marginBottom="2dp"
             android:layout_marginTop="10dp"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
@@ -112,6 +116,72 @@
                 android:textColor="#3E2723" />
 
         </RadioGroup>
+
+        <TextView
+            android:id="@+id/questionTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/questionOneRadioGroup"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="@string/question_two"
+            android:textColor="#263238"
+            android:textSize="18sp" />
+
+        <CheckBox
+            android:id="@+id/q2CheckBox1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/questionTwo"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/james_madison"
+            android:textColor="#263238" />
+
+        <CheckBox
+            android:id="@+id/q2CheckBox2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/q2CheckBox1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/george_washington"
+            android:textColor="#263238" />
+
+        <CheckBox
+            android:id="@+id/q2CheckBox3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/q2CheckBox2"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/abraham_lincoln"
+            android:textColor="#263238" />
+
+        <CheckBox
+            android:id="@+id/q2CheckBox4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/q2CheckBox3"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/alexander_mackenzie"
+            android:textColor="#263238" />
+
+        <TextView
+            android:id="@+id/questionThree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/q2CheckBox4"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="@string/question_three"
+            android:textColor="#263238"
+            android:textSize="18sp" />
 
     </RelativeLayout>
 
