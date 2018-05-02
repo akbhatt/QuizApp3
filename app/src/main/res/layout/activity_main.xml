@@ -283,6 +283,7 @@
             android:layout_below="@+id/questionExtraCreditAnswerEditText"
             android:layout_centerInParent="true"
             android:layout_margin="3dp"
+            android:onClick="getScore"
             android:text="@string/score"
             android:textColor="#ffffff" />
 
@@ -293,6 +294,7 @@
             android:layout_below="@+id/scoreButton"
             android:layout_centerInParent="true"
             android:layout_margin="3dp"
+            android:onClick="shareScore"
             android:text="@string/share"
             android:textColor="#ffffff" />
 

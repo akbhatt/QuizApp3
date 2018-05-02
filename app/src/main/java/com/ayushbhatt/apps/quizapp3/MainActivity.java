@@ -1,7 +1,15 @@
 package com.ayushbhatt.apps.quizapp3;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.Toast;
+
+import static android.widget.Toast.LENGTH_LONG;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -9,5 +17,68 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    //initialization of the score integer and converting int score to string score
+    int score;
+    String scoreString = String.valueOf(score);
+
+    //to get the name from the name edit view
+    public String getName() {
+        EditText nameEditText = findViewById(R.id.nameEditText);
+        String name = nameEditText.getText().toString();
+        return name;
+    }
+
+    //scoring the quiz
+    public void quizScoring(View v) {
+
+        //get necessary views
+        RadioButton answerOne = findViewById(R.id.q1r2);
+        RadioButton answerThree = findViewById(R.id.q3r2);
+        CheckBox answerTwoOptionOne = findViewById(R.id.q2CheckBox1);
+        CheckBox answerTwoOptionTwo = findViewById(R.id.q2CheckBox2);
+        EditText answerFour = findViewById(R.id.questionFourAnswerEditText);
+        String answerFourString = answerFour.getText().toString().toLowerCase();
+
+        //check for correct answer
+        if (answerOne.isChecked()) {
+            score++;
+        }
+        if (answerThree.isChecked()) {
+            score++;
+        }
+        if (answerTwoOptionOne.isChecked() && answerTwoOptionTwo.isChecked()) {
+            score++;
+        }
+        if (answerFourString.equals("canada")) {
+            score++;
+        }
+    }
+
+    public void getScore(View v) {
+        quizScoring(v);
+        Toast scoreToast = Toast.makeText(this, scoreString, LENGTH_LONG);
+        scoreToast.show();
+    }
+
+    public void shareScore(View v) {
+        //get values from extra credit field and name field and share it
+        EditText extraCreditAnswer = findViewById(R.id.questionExtraCreditAnswerEditText);
+        String extraCreditAnswerString = extraCreditAnswer.getText().toString();
+        String name = getName();
+        String subject = name + ", your score is ready!";
+        String message = name + ", your score is: " + scoreString;
+        message += "Your extra credit answer is: " + extraCreditAnswerString;
+
+        Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+        sharingIntent.setType("*/*");
+        sharingIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        sharingIntent.putExtra(Intent.EXTRA_TEXT, message);
+
+        if (sharingIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(sharingIntent);
+        }
+
     }
 }
