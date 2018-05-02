@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    //initialization of the score integer and converting int score to string score
+    //initialization of the score integer
     int score;
 
     //to get the name from the name edit view
@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         EditText answerFour = findViewById(R.id.questionFourAnswerEditText);
         String answerFourString = answerFour.getText().toString().toLowerCase();
 
+
         //check for correct answer
         if (answerOne.isChecked()) {
             score++;
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //getting the score toast by clicking the score button
     public void getScore(View v) {
         String name = getName();
         if (name.equals("")) {
@@ -68,8 +70,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //sharing the score to any app that uses EXTRA_SUBJECT or EXTRA_TEXT by clicking the share button
     public void shareScore(View v) {
-        //get values from extra credit field and name field and share it and convert score to string
+        //get values from edit text field and adding the string subject and message for sharing
         String scoreString = String.valueOf(score);
         EditText extraCreditAnswer = findViewById(R.id.questionExtraCreditAnswerEditText);
         String extraCreditAnswerString = extraCreditAnswer.getText().toString();
