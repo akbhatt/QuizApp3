@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
 
     //initialization of the score integer and converting int score to string score
     int score;
-    String scoreString = String.valueOf(score);
 
     //to get the name from the name edit view
     public String getName() {
@@ -57,19 +56,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void getScore(View v) {
-        quizScoring(v);
-        Toast scoreToast = Toast.makeText(this, scoreString, LENGTH_LONG);
-        scoreToast.show();
+        String name = getName();
+        if (name.equals("")) {
+            Toast errorToast = Toast.makeText(this, "Please enter a name to get score!", LENGTH_LONG);
+            errorToast.show();
+        } else {
+            quizScoring(v);
+            String scoreString = String.valueOf(score);
+            Toast scoreToast = Toast.makeText(this, name + ", your score is: " + scoreString + "/4", LENGTH_LONG);
+            scoreToast.show();
+        }
     }
 
     public void shareScore(View v) {
-        //get values from extra credit field and name field and share it
+        //get values from extra credit field and name field and share it and convert score to string
+        String scoreString = String.valueOf(score);
         EditText extraCreditAnswer = findViewById(R.id.questionExtraCreditAnswerEditText);
         String extraCreditAnswerString = extraCreditAnswer.getText().toString();
         String name = getName();
         String subject = name + ", your score is ready!";
         String message = name + ", your score is: " + scoreString;
-        message += "Your extra credit answer is: " + extraCreditAnswerString;
+        message += "\n Your extra credit answer is: " + extraCreditAnswerString;
 
         Intent sharingIntent = new Intent(Intent.ACTION_SEND);
         sharingIntent.setType("*/*");
