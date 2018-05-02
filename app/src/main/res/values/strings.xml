@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">QuizApp3</string>
+    <string name="welcome_text">Welcome to the USA Quiz!</string>
+    <string name="name_question_text">Enter your name in the box below:</string>
+    <string name="magna_sigi">Magna Sigi</string>
+    <string name="question_one">Question One: Who was the first president of the United States?</string>
+    <string name="thomas_jefferson">Thomas Jefferson</string>
+    <string name="george_washington">George Washington</string>
+    <string name="john_adams">John Adams</string>
+    <string name="benjamin_franklin">Benjamin Franklin</string>
 </resources>

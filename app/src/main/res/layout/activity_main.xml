@@ -10,13 +10,108 @@
         android:id="@+id/mainRelativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#E0F7FA">
+        android:background="#64B5F6"
+        android:padding="2dp">
 
         <TextView
             android:id="@+id/welcomeTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Welcome to the Score Keeper App!" />
+            android:text="@string/welcome_text"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <View
+            android:id="@+id/firstViewDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/welcomeTextView"
+            android:layout_margin="5dp"
+            android:background="#000000" />
+
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/welcomeTextView"
+            android:layout_marginTop="8dp"
+            android:text="@string/name_question_text"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameTextView"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/rectangle_one"
+            android:hint="@string/magna_sigi"
+            android:inputType="textPersonName"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="#000000" />
+
+        <View
+            android:id="@+id/secondViewDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/nameEditText"
+            android:layout_margin="5dp"
+            android:background="#000000" />
+
+        <TextView
+            android:id="@+id/questionOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameEditText"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="@string/question_one"
+            android:textColor="#3E2723"
+            android:textSize="18sp" />
+
+        <RadioGroup
+            android:id="@+id/questionOneRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/questionOne"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp">
+
+            <RadioButton
+                android:id="@+id/q1r1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/thomas_jefferson"
+                android:textColor="#3E2723" />
+
+            <RadioButton
+                android:id="@+id/q1r2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/george_washington"
+                android:textColor="#3E2723" />
+
+            <RadioButton
+                android:id="@+id/q1r3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/john_adams"
+                android:textColor="#3E2723" />
+
+            <RadioButton
+                android:id="@+id/q1r4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/benjamin_franklin"
+                android:textColor="#3E2723" />
+
+        </RadioGroup>
 
     </RelativeLayout>
 
