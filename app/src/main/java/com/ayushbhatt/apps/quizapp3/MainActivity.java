@@ -19,9 +19,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    //initialization of the score integer
-    int score;
-
     //to get the name from the name edit view
     public String getName() {
         EditText nameEditText = findViewById(R.id.nameEditText);
@@ -30,13 +27,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //scoring the quiz
-    public void quizScoring(View v) {
+    public int quizScoring() {
+
+        //initialization of the score integer
+        int score = 0;
 
         //get necessary views
-        RadioButton answerOne = findViewById(R.id.q1r2);
-        RadioButton answerThree = findViewById(R.id.q3r2);
-        CheckBox answerTwoOptionOne = findViewById(R.id.q2CheckBox1);
-        CheckBox answerTwoOptionTwo = findViewById(R.id.q2CheckBox2);
+        RadioButton answerOne = findViewById(R.id.questionOneRadioButtonTwo);
+        RadioButton answerThree = findViewById(R.id.questionThreeRadioButtonTwo);
+        CheckBox answerTwoOptionOne = findViewById(R.id.questionTwoCheckBox1);
+        CheckBox answerTwoOptionTwo = findViewById(R.id.questionTwoCheckBox2);
+        CheckBox answerTwoOptionThree = findViewById(R.id.questionTwoCheckBox3);
+        CheckBox answerTwoOptionFour = findViewById(R.id.questionTwoCheckBox4);
         EditText answerFour = findViewById(R.id.questionFourAnswerEditText);
         String answerFourString = answerFour.getText().toString().toLowerCase();
 
@@ -50,20 +52,26 @@ public class MainActivity extends AppCompatActivity {
         }
         if (answerTwoOptionOne.isChecked() && answerTwoOptionTwo.isChecked()) {
             score++;
+            if (answerTwoOptionThree.isChecked() || answerTwoOptionFour.isChecked()) {
+                score--;
+            }
         }
-        if (answerFourString.equals("canada")) {
+        if (answerFourString.equalsIgnoreCase("canada")) {
             score++;
         }
+
+        return score;
     }
 
     //getting the score toast by clicking the score button
     public void getScore(View v) {
+        int score = quizScoring();
         String name = getName();
         if (name.equals("")) {
             Toast errorToast = Toast.makeText(this, "Please enter a name to get score!", LENGTH_LONG);
             errorToast.show();
         } else {
-            quizScoring(v);
+            quizScoring();
             String scoreString = String.valueOf(score);
             Toast scoreToast = Toast.makeText(this, name + ", your score is: " + scoreString + "/4", LENGTH_LONG);
             scoreToast.show();
@@ -71,8 +79,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //sharing the score to any app that uses EXTRA_SUBJECT or EXTRA_TEXT by clicking the share button
-    public void shareScore(View v) {
+    public void shareScore() {
         //get values from edit text field and adding the string subject and message for sharing
+        int score = quizScoring();
         String scoreString = String.valueOf(score);
         EditText extraCreditAnswer = findViewById(R.id.questionExtraCreditAnswerEditText);
         String extraCreditAnswerString = extraCreditAnswer.getText().toString();

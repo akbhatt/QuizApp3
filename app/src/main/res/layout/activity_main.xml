@@ -4,14 +4,14 @@
     android:id="@+id/mainScrollView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#E0F7FA"
+    android:background="@color/almostWhite"
     android:keepScreenOn="true">
 
     <RelativeLayout
         android:id="@+id/mainRelativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#E0E0E0"
+        android:background="@color/almostWhite"
         android:padding="2dp">
 
         <TextView
@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:text="@string/welcome_text"
             android:textAlignment="center"
-            android:textColor="#FF5722"
+            android:textColor="@color/someOrange"
             android:textSize="30sp" />
 
         <View
@@ -29,7 +29,7 @@
             android:layout_height="1dp"
             android:layout_below="@id/welcomeTextView"
             android:layout_margin="5dp"
-            android:background="#000000" />
+            android:background="@color/black" />
 
         <TextView
             android:id="@+id/nameTextView"
@@ -41,7 +41,7 @@
             android:layout_marginTop="8dp"
             android:text="@string/name_question_text"
             android:textAlignment="center"
-            android:textColor="#FF3D00"
+            android:textColor="@color/someDarkOrange"
             android:textSize="20sp" />
 
         <EditText
@@ -58,7 +58,7 @@
             android:padding="5dp"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
-            android:textColorHint="#78909C" />
+            android:textColorHint="@color/someGreyishColor" />
 
         <View
             android:id="@+id/secondViewDivider"
@@ -66,7 +66,7 @@
             android:layout_height="1dp"
             android:layout_below="@id/nameEditText"
             android:layout_margin="5dp"
-            android:background="#000000" />
+            android:background="@color/black" />
 
         <TextView
             android:id="@+id/questionOne"
@@ -77,7 +77,7 @@
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:text="@string/question_one"
-            android:textColor="#3E2723"
+            android:textColor="@color/someDarkBrown"
             android:textSize="18sp" />
 
         <RadioGroup
@@ -89,32 +89,32 @@
             android:layout_marginRight="8dp">
 
             <RadioButton
-                android:id="@+id/q1r1"
+                android:id="@+id/questionOneRadioButtonOne"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/thomas_jefferson"
-                android:textColor="#3E2723" />
+                android:textColor="@color/someDarkBrown" />
 
             <RadioButton
-                android:id="@+id/q1r2"
+                android:id="@+id/questionOneRadioButtonTwo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/george_washington"
-                android:textColor="#3E2723" />
+                android:textColor="@color/someDarkBrown" />
 
             <RadioButton
-                android:id="@+id/q1r3"
+                android:id="@+id/questionOneRadioButtonThree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/john_adams"
-                android:textColor="#3E2723" />
+                android:textColor="@color/someDarkBrown" />
 
             <RadioButton
-                android:id="@+id/q1r4"
+                android:id="@+id/questionOneRadioButtonFour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/benjamin_franklin"
-                android:textColor="#3E2723" />
+                android:textColor="@color/someDarkBrown" />
 
         </RadioGroup>
 
@@ -128,60 +128,60 @@
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:text="@string/question_two"
-            android:textColor="#263238"
+            android:textColor="@color/someBluishGrey"
             android:textSize="18sp" />
 
         <CheckBox
-            android:id="@+id/q2CheckBox1"
+            android:id="@+id/questionTwoCheckBox1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/questionTwo"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:text="@string/james_madison"
-            android:textColor="#263238" />
+            android:textColor="@color/someBluishGrey" />
 
         <CheckBox
-            android:id="@+id/q2CheckBox2"
+            android:id="@+id/questionTwoCheckBox2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/q2CheckBox1"
+            android:layout_below="@id/questionTwoCheckBox1"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:text="@string/george_washington"
-            android:textColor="#263238" />
+            android:textColor="@color/someBluishGrey" />
 
         <CheckBox
-            android:id="@+id/q2CheckBox3"
+            android:id="@+id/questionTwoCheckBox3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/q2CheckBox2"
+            android:layout_below="@id/questionTwoCheckBox2"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:text="@string/abraham_lincoln"
-            android:textColor="#263238" />
+            android:textColor="@color/someBluishGrey" />
 
         <CheckBox
-            android:id="@+id/q2CheckBox4"
+            android:id="@+id/questionTwoCheckBox4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/q2CheckBox3"
+            android:layout_below="@id/questionTwoCheckBox3"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:text="@string/alexander_mackenzie"
-            android:textColor="#263238" />
+            android:textColor="@color/someBluishGrey" />
 
         <TextView
             android:id="@+id/questionThree"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/q2CheckBox4"
+            android:layout_below="@id/questionTwoCheckBox4"
             android:layout_marginBottom="2dp"
             android:layout_marginTop="10dp"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:text="@string/question_three"
-            android:textColor="#263238"
+            android:textColor="@color/someBluishGrey"
             android:textSize="18sp" />
 
         <RadioGroup
@@ -193,32 +193,32 @@
             android:layout_marginRight="8dp">
 
             <RadioButton
-                android:id="@+id/q3r1"
+                android:id="@+id/questionThreeRadioButtonOne"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/option_q3r1"
-                android:textColor="#263238" />
+                android:textColor="@color/someBluishGrey" />
 
             <RadioButton
-                android:id="@+id/q3r2"
+                android:id="@+id/questionThreeRadioButtonTwo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/option_q3r2"
-                android:textColor="#263238" />
+                android:textColor="@color/someBluishGrey" />
 
             <RadioButton
-                android:id="@+id/q3r3"
+                android:id="@+id/questionThreeRadioButtonThree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/option_q3r3"
-                android:textColor="#263238" />
+                android:textColor="@color/someBluishGrey" />
 
             <RadioButton
-                android:id="@+id/q3r4"
+                android:id="@+id/questionThreeRadioButtonFour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/option_q3r4"
-                android:textColor="#263238" />
+                android:textColor="@color/someBluishGrey" />
 
         </RadioGroup>
 
@@ -232,7 +232,7 @@
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:text="@string/question_four"
-            android:textColor="#000000"
+            android:textColor="@color/black"
             android:textSize="18sp" />
 
         <EditText
@@ -247,7 +247,7 @@
             android:inputType="text|textAutoCorrect"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
-            android:textColorHint="#78909C" />
+            android:textColorHint="@color/someLightGrey" />
 
         <TextView
             android:id="@+id/questionExtraCredit"
@@ -259,7 +259,7 @@
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:text="@string/question_extra_credit"
-            android:textColor="#000000"
+            android:textColor="@color/black"
             android:textSize="18sp" />
 
         <EditText
@@ -274,7 +274,7 @@
             android:inputType="textMultiLine|textAutoCorrect"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
-            android:textColorHint="#78909C" />
+            android:textColorHint="@color/someLightGrey" />
 
         <Button
             android:id="@+id/scoreButton"
@@ -285,7 +285,7 @@
             android:layout_margin="3dp"
             android:onClick="getScore"
             android:text="@string/score"
-            android:textColor="#ffffff" />
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/shareButton"
@@ -296,7 +296,7 @@
             android:layout_margin="3dp"
             android:onClick="shareScore"
             android:text="@string/share"
-            android:textColor="#ffffff" />
+            android:textColor="@color/white" />
 
     </RelativeLayout>
 
